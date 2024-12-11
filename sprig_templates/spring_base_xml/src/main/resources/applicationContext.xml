@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+      https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Указание property файла, если Beans создаем с использованием данных из файла-->
+    <context:property-placeholder location="context.properties"/>
+
+    <!--    Создание Bean с использованием конструктора класса без параметров-->
+    <bean id="cameraRoll" class="ru.bichevoy.BlackAndWhiteCameraRoll"/>
+
+    <!--    Создание Bean с использованием конструктора с параметрами-->
+    <!--    <bean id="camera" class="ru.bichevoy.Camera">-->
+    <!--        <constructor-arg ref="cameraRoll"/>-->
+    <!--    </bean>-->
+
+    <!--    Создание Bean с использованием set (из метода setCameraRoll() отбрасываем set,-->
+    <!--    первая буква понижается в регистре, получается name="cameraRoll")-->
+    <!--    <bean id="camera" class="ru.bichevoy.Camera">-->
+    <!--        <property name="cameraRoll" ref="cameraRoll"/>-->
+    <!--        <property name="brand" value="Canon"/>-->
+    <!--    </bean>-->
+
+    <!--    Создание Bean со значениями из property файла-->
+    <!--    <bean id="camera" class="ru.bichevoy.Camera">-->
+    <!--        <property name="cameraRoll" ref="cameraRoll"/>-->
+    <!--        <property name="brand" value="${camera.brand}"/>-->
+    <!--    </bean>-->
+
+    <!--    Создание Bean с задействованием init и destroy методов, указанием scope-->
+    <bean id="camera" class="ru.bichevoy.Camera"
+          init-method="init"
+          destroy-method="destroy"
+          scope="singleton">
+        <property name="cameraRoll" ref="cameraRoll"/>
+        <property name="brand" value="${camera.brand}"/>
+    </bean>
+</beans>
