@@ -9,6 +9,10 @@ public class Main {
         Book book = context.getBean("book", Book.class);
         book.getBook();
         book.setTitle("Kolobok");
+        String title = book.getTitle();
+        System.out.println(title);
+        book.setAuthor("Igor");
+        System.out.println(book.getAuthor());
 
 
     }

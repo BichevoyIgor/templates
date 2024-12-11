@@ -14,10 +14,10 @@ AOP – технология для отделения бизнес логики
    ..}
 
 @Before(“execution(метод())”) – метод аспекта сработает перед выполнением заданного метода<br>
-@AfterReturning – выполнится после нормального окончания метода<br>
+@AfterReturning – выполнится после успешного окончания метода, передав в параметр Advice, return результат метода<br>
 @AfterThrowing – выполнится после окончания метода только если было выброшено исключение<br>
-@After/ After finally – выполнится после окончания метода<br>
-@Around – выполнится ДО и ПОСЛЕ окончания метода<br>
+@After/ After finally – выполнится в любом случае после окончания метода (было/не было исключения)<br>
+@Around – оборачиваем каким то кодом перехватываемый метод, в нужном месте запускаем перехваченный метод с помощью proceedingJoinPoint.proceed(). Можем получить returning, throwing, и даже обработать исключение, но правильнее прокинуть<br>
 
 Pointcut – выражение описывающее где должен быть применен Advice<br>
 Синтаксис pointcut expression:<br>
@@ -39,4 +39,7 @@ execution( ~~modifier~~ **returnType** ~~classPath~~ **methodName(params)** ~~th
     @Pointcut("execution(public void set*(..))") // создание pointcut
     private void allSetMethodsFromBook(){
     }
+
+**JoinPoint**<br>
+Прописав JoinPoint в параметр Advice метода, можно получить инфо о сигнатуре и параметрах перехватываемого метода
 
