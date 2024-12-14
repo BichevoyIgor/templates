@@ -60,9 +60,9 @@ public class LoggingAspect {
     @Around("execution(public String getAuthor())")
     public Object aroundReturningAuthorAdvice(ProceedingJoinPoint proceedingJoinPoint) {
         System.out.println("around before");
-        Object result = null; // вызываем метод
+        Object result = null;
         try {
-            result = proceedingJoinPoint.proceed();
+            result = proceedingJoinPoint.proceed(); // вызываем метод
         } catch (Throwable e) {
             System.out.println("Поймано исключение: " + e);
             throw new RuntimeException(e);
