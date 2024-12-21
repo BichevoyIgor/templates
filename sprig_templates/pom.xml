@@ -16,12 +16,11 @@
         <module>spring_boot</module>
         <module>springBoot_springData</module>
         <module>spring_AOP</module>
+        <module>spring_REST_tregulov</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
         <spring.version>5.3.3</spring.version>
         <spring.webmvc.version>6.1.12</spring.webmvc.version>
     </properties>
