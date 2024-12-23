@@ -17,6 +17,7 @@
         <module>springBoot_springData</module>
         <module>spring_AOP</module>
         <module>spring_REST_tregulov</module>
+        <module>spring_security_tregulov</module>
     </modules>
 
     <properties>

@@ -1,4 +1,4 @@
-package ru.bichevoy.spring.rest.configuration;
+package ru.bichevoy.spring.security.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
