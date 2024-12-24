@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.bichevoy</groupId>
-    <artifactId>springBoot_springData</artifactId>
+    <artifactId>spring_Boot_springData</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springBoot_springData</name>
     <description>springBoot_springData</description>
